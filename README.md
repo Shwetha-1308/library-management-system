@@ -15,7 +15,9 @@ Thread Safety: All core operations are synchronized to ensure thread safety.
 Scalability: Easily extendable for fines, reservations, notifications, etc.
 
 ✅ Core Entities
+
 Entity	Description
+
 LibrarySystem: Singleton system managing books, members, catalog, and loans
 Book: Represents book metadata (ISBN, title, author)
 BookInstance: Represents a physical copy of a Book
@@ -25,12 +27,15 @@ BookCatalog: Maintains indexed collections of book copies and supports search
 BookStatus: Enum representing the state of a book copy
 
 ✅ Class Design Overview
+
 1. LibrarySystem
 Type: Singleton
 Fields:
+
 BookCatalog catalog
 Map<String, LibraryMember> members
 Map<String, BookLoan> loans
+
 Methods:
 addNewBook(Book book)
 registerMember(String name, String contactInfo)
@@ -38,13 +43,13 @@ issueBook(String memberId, String title)
 returnBook(String loanId)
 searchBooksByTitle(String)
 searchBooksByAuthor(String)
-2. Book
+3. Book
 Fields:
 String isbn
 String title
 String author
 Purpose: Stores general book information (not tied to physical copies)
-3. BookInstance
+4. BookInstance
 Fields:
 String copyId
 Book bookDetails
@@ -53,7 +58,7 @@ Methods:
 issue()
 returnCopy()
 isAvailable()
-4. LibraryMember
+5. LibraryMember
 Fields:
 String memberId
 String name
@@ -63,7 +68,7 @@ Methods:
 canBorrow()
 addLoan(BookLoan)
 removeLoan(BookLoan)
-5. BookLoan
+6. BookLoan
 Fields:
 String loanId
 BookInstance bookInstance
@@ -74,7 +79,7 @@ boolean isActive
 Methods:
 closeLoan()
 getLoanId(), getDueDate(), etc.
-6. BookCatalog
+7. BookCatalog
 Fields:
 Map<String, List<BookInstance>> titleIndex
 Map<String, List<BookInstance>> authorIndex
@@ -85,7 +90,7 @@ findBooksByTitle(String)
 findBooksByAuthor(String)
 findBooksByIsbn(String)
 getCopiesByTitle(String)
-7. BookStatus (Enum)
+8. BookStatus (Enum)
 Values:
 AVAILABLE
 BORROWED
