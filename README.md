@@ -91,26 +91,22 @@ findBooksByAuthor(String)
 findBooksByIsbn(String)
 getCopiesByTitle(String)
 8. BookStatus (Enum)
+
 Values:
+
 AVAILABLE
 BORROWED
 RESERVED
 LOST
+
 Purpose: Represents availability status of a book copy (optional enhancement)
 
-✅ Example Usage (Java)
-LibrarySystem system = LibrarySystem.getInstance();
-Book book = new Book("978-0134685991", "Effective Java", "Joshua Bloch");
-system.addNewBook(book);
-LibraryMember alice = system.registerMember("Alice", "alice@example.com");
-BookLoan loan = system.issueBook(alice.getMemberId(), "Effective Java");
-system.returnBook(loan.getLoanId());
-
 ✅ Extensibility
+
 This system is designed to be extensible. You can easily add:
+
 ✅ Book Reservations: Queue or priority-based reservation system
 ✅ Fines Management: Track overdue books and apply fine rules
 ✅ Notifications: Alert users about due dates, reservations, etc.
 ✅ Digital Books: Extend BookInstance to handle eBooks or access rights
 
-✅ Digital Books: Extend BookInstance to handle eBooks or access rights
