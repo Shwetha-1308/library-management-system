@@ -19,4 +19,22 @@ Thread Safety: All core operations are synchronized to ensure thread safety.
 
 Scalability: Easily extendable for fines, reservations, notifications, etc.
 
+✅ Core Entities
+
+Entity	Description
+
+LibrarySystem-Singleton system managing books, members, catalog, and loans
+
+Book-Represents book metadata (ISBN, title, author)
+
+BookInstance-Represents a physical copy of a Book
+
+LibraryMember-Represents a user who can borrow books
+
+BookLoan-Tracks a borrowing record for a specific BookInstance
+
+BookCatalog-Maintains indexed collections of book copies and supports search
+
+BookStatus-Enum representing the state of a book copy
+
 
