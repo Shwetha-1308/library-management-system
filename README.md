@@ -99,23 +99,21 @@ getBookDetails()
 
 getCopyId()
 
+✅Demo
 
-Example Usage (Java):
+See LibrarySystemDemo.java for a sample usage and simulation of the library management system.
 
-LibrarySystem system = LibrarySystem.getInstance();
+✅ Extensibility
 
+This system is designed to be extensible. You can easily add:
 
-Book book = new Book("978-0134685991", "Effective Java", "Joshua Bloch");
+✅ Book Reservations: Queue or priority-based reservation system
 
-system.addNewBook(book);
+✅ Fines Management: Track overdue books and apply fine rules
 
+✅ Notifications: Alert users about due dates, reservations, etc.
 
-LibraryMember alice = system.registerMember("Alice", "alice@example.com");
-
-
-BookLoan loan = system.issueBook(alice.getMemberId(), "Effective Java");
-
-system.returnBook(loan.getLoanId());
+✅ Digital Books: Extend BookInstance to handle eBooks or access rights
 
 
 
