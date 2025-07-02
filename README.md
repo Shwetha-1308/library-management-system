@@ -99,6 +99,103 @@ getBookDetails()
 
 getCopyId()
 
+4. LibraryMember
+   
+Fields:
+
+String memberId
+
+String name
+
+String contactInfo
+
+List<BookLoan> activeLoans
+
+Methods:
+
+canBorrow()
+
+addLoan(BookLoan)
+
+removeLoan(BookLoan)
+
+getMemberId()
+
+getName()
+
+getContactInfo()
+
+getActiveLoans()
+
+5. BookLoan
+   
+Fields:
+
+String loanId
+
+BookInstance bookInstance
+
+LibraryMember borrower
+
+LocalDate issueDate
+
+LocalDate dueDate
+
+boolean isActive
+
+Methods:
+
+closeLoan()
+
+getLoanId()
+
+getBookInstance()
+
+getBorrower()
+
+getIssueDate()
+
+getDueDate()
+
+isActive()
+
+6. BookCatalog
+   
+Fields:
+
+Map<String, List<BookInstance>> titleIndex
+
+Map<String, List<BookInstance>> authorIndex
+
+Map<String, List<BookInstance>> isbnIndex
+
+Methods:
+
+addBookInstance(BookInstance)
+
+findBooksByTitle(String)
+
+findBooksByAuthor(String)
+
+findBooksByIsbn(String)
+
+getCopiesByTitle(String)
+
+
+7. BookStatus (Enum)
+   
+Values:
+
+AVAILABLE
+
+BORROWED
+
+RESERVED
+
+LOST
+
+Purpose: Represents availability status of a book copy (optional enhancement)
+
 ✅Demo
 
 See LibrarySystemDemo.java for a sample usage and simulation of the library management system.
