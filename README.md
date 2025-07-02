@@ -100,4 +100,22 @@ getBookDetails()
 getCopyId()
 
 
+Example Usage (Java):
+
+LibrarySystem system = LibrarySystem.getInstance();
+
+
+Book book = new Book("978-0134685991", "Effective Java", "Joshua Bloch");
+
+system.addNewBook(book);
+
+
+LibraryMember alice = system.registerMember("Alice", "alice@example.com");
+
+
+BookLoan loan = system.issueBook(alice.getMemberId(), "Effective Java");
+
+system.returnBook(loan.getLoanId());
+
+
 
