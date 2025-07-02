@@ -37,4 +37,67 @@ BookCatalog-Maintains indexed collections of book copies and supports search
 
 BookStatus-Enum representing the state of a book copy
 
+✅ Class Design Overview
+
+1. LibrarySystem
+   
+Type: Singleton
+
+Fields:
+
+BookCatalog catalog
+
+Map<String, LibraryMember> members
+
+Map<String, BookLoan> loans
+
+Methods:
+
+addNewBook(Book book)
+
+registerMember(String name, String contactInfo)
+
+issueBook(String memberId, String title)
+
+returnBook(String loanId)
+
+searchBooksByTitle(String)
+
+searchBooksByAuthor(String)
+
+2. Book
+   
+Fields:
+
+String isbn
+
+String title
+
+String author
+
+Purpose: Stores general book information 
+
+3. BookInstance
+   
+Fields:
+
+String copyId
+
+Book bookDetails
+
+boolean available
+
+Methods:
+
+issue()
+
+returnCopy()
+
+isAvailable()
+
+getBookDetails()
+
+getCopyId()
+
+
 
